@@ -1,0 +1,55 @@
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:21:16]
+ : errorno [8] Undefined variable: Cate1, line 222 in file /home/hosting_users/kthclub/www/guide.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:21:16]
+ : errorno [8] Undefined variable: Cate2, line 222 in file /home/hosting_users/kthclub/www/guide.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:21:16]
+ : errorno [8] Undefined variable: Cate3, line 222 in file /home/hosting_users/kthclub/www/guide.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:50:39]
+ : errorno [2] Missing argument 1 for MySQL::MySQL(), called in /home/hosting_users/kthclub/www/guide.php on line 4 and defined, line 23 in file /home/hosting_users/kthclub/www/_guide/_core/system/class.MySQL.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:50:39]
+ : errorno [8] Undefined variable: mysql, line 26 in file /home/hosting_users/kthclub/www/_guide/_core/system/class.MySQL.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:50:39]
+ : errorno [8] Undefined variable: mysql, line 26 in file /home/hosting_users/kthclub/www/_guide/_core/system/class.MySQL.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:50:39]
+ : errorno [8] Undefined variable: mysql, line 26 in file /home/hosting_users/kthclub/www/_guide/_core/system/class.MySQL.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:50:39]
+ : errorno [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'kthclub'@'localhost' (using password: NO), line 26 in file /home/hosting_users/kthclub/www/_guide/_core/system/class.MySQL.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:51:37]
+ : errorno [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'kthclub'@'localhost' (using password: NO), line 26 in file /home/hosting_users/kthclub/www/_guide/_core/system/class.MySQL.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:51:41]
+ : errorno [8] Undefined variable: mysql1, line 4 in file /home/hosting_users/kthclub/www/guide.php 
+
+
+---------------------------------------------------------------
+ Unknown error [2012-05-09 15:51:41]
+ : errorno [2] mysql_connect() [<a href='function.mysql-connect'>function.mysql-connect</a>]: Access denied for user 'kthclub'@'localhost' (using password: NO), line 26 in file /home/hosting_users/kthclub/www/_guide/_core/system/class.MySQL.php 
+
+

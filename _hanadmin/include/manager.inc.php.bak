@@ -1,0 +1,215 @@
+<?
+/*====================================================================================================
+◈ 접급권한 체크
+----------------------------------------------------------------------------------------------------*/
+if(isset($_SESSION['_MANAGER_']['ID']) && $_SESSION['_MANAGER_']['ID'] != "") define("_is_manager_", $_SESSION['_MANAGER_']['ID']);
+
+
+
+/*====================================================================================================
+◈ 메뉴셋팅
+----------------------------------------------------------------------------------------------------*/
+$SNB['0'] = "<img src='"._ADMIN_."/images/snb/snb.gif'>";
+
+$GNB['A'] = "<img src='"._ADMIN_."/images/gnb/gnb0.gif'>";
+$SNB['A'] = "<img src='"._ADMIN_."/images/snb/snb0.gif'>";
+
+$Menu['A']['A001'] = array("사이트관리",_ADMIN_."/_popup/popup.php");
+$Menu['A001']['11'] = array("팝업관리",_ADMIN_."/_popup/popup.php");
+$Menu['A001']['12'] = array("배너관리",_ADMIN_."/_banner/banner.php");
+$Menu['A001']['13'] = array("환경설정",_ADMIN_."/_site/siteconfig.php");
+
+$Menu['A']['A002'] = array("관리자",_ADMIN_."/_schedule/");
+$Menu['A002']['11'] = array("일정관리",_ADMIN_."/_schedule/");
+$Menu['A002']['12'] = array("임시메모",_ADMIN_."/_notes/");
+$Menu['A002']['13'] = array("관리자비밀번호변경",_ADMIN_."/_manager/pwdchange.php");
+
+$Menu['A']['A003'] = array("로그분석",_ADMIN_."/_log/today.php");
+$Menu['A003']['11'] = array("오늘접속",_ADMIN_."/_log/today.php");
+$Menu['A003']['12'] = array("방문자수",_ADMIN_."/_log/visitcount.php");
+$Menu['A003']['13'] = array("유입분석",_ADMIN_."/_log/referer.php");
+$Menu['A003']['14'] = array("페이지분석",_ADMIN_."/_log/page.php");
+$Menu['A003']['15'] = array("사용자환경",_ADMIN_."/_log/user.php");
+
+
+$GNB['B'] = "<img src='"._ADMIN_."/images/gnb/gnb5.gif'>";
+$SNB['B'] = "<img src='"._ADMIN_."/images/snb/snb5.gif'>";
+$Menu['B']['B001'] = array("고객센터",_ADMIN_."/board/notice.php");
+$Menu['B001']['11'] = array("공지사항",_ADMIN_."/board/notice.php");
+$Menu['B001']['12'] = array("자주묻는질문(FAQ)",_ADMIN_."/board/faq.php");
+$Menu['B001']['13'] = array("질문과답변(Q&amp;A)",_ADMIN_."/board/qna.php");
+$Menu['B001']['14'] = array("제휴문의",_ADMIN_."/board/inquiry.php");
+$Menu['B001']['15'] = array("1:1문의",_ADMIN_."/board/counsel.php");
+
+$Menu['B']['B002'] = array("커뮤니티",_ADMIN_."/board/board.php");
+$Menu['B002']['11'] = array("자유게시판",_ADMIN_."/board/board.php");
+$Menu['B002']['12'] = array("갤러리",_ADMIN_."/board/gallery.php");
+$Menu['B002']['13'] = array("갤러리1",_ADMIN_."/board/gallery1.php");
+
+$Menu['B']['B003'] = array("이벤트",_ADMIN_."/board/event.php");
+$Menu['B003']['11'] = array("이벤트",_ADMIN_."/board/event.php");
+$Menu['B003']['12'] = array("당첨자발표",_ADMIN_."/board/event_result.php");
+
+
+$GNB['C'] = "<img src='"._ADMIN_."/images/gnb/gnb6.gif'>";
+$SNB['C'] = "<img src='"._ADMIN_."/images/snb/snb6.gif'>";
+
+$Menu['C']['C001'] = array("카테고리관리",_ADMIN_."/_product/category.php");
+$Menu['C001']['11'] = array("카테고리관리",_ADMIN_."/_product/category.php");
+
+$Menu['C']['C002'] = array("상품관리",_ADMIN_."/_product/product.php");
+$Menu['C002']['11'] = array("상품관리",_ADMIN_."/_product/product.php");
+
+$Menu['C']['C003'] = array("아이템관리",_ADMIN_."/_product/item.php");
+$Menu['C003']['11'] = array("아이템관리",_ADMIN_."/_product/item.php");
+
+$Menu['C']['C004'] = array("쿠폰발행",_ADMIN_."/_product/coupon.php");
+$Menu['C004']['11'] = array("쿠폰발행/관리",_ADMIN_."/_product/coupon.php");
+
+
+
+
+$GNB['D'] = "<img src='"._ADMIN_."/images/gnb/gnb1.gif'>";
+$SNB['D'] = "<img src='"._ADMIN_."/images/snb/snb1.gif'>";
+$Menu['D']['D001'] = array("주문관리",_ADMIN_."/_order/order.php");
+$Menu['D001']['11'] = array("주문관리",_ADMIN_."/_order/order.php");
+$Menu['D001']['12'] = array("아이템사용내역",_ADMIN_."/_order/item.php");
+
+$GNB['E'] = "<img src='"._ADMIN_."/images/gnb/gnb3.gif'>";
+$SNB['E'] = "<img src='"._ADMIN_."/images/snb/snb3.gif'>";
+$Menu['E']['E001'] = array("회원관리",_ADMIN_."/_member/member.php");
+$Menu['E001']['11'] = array("회원목록",_ADMIN_."/_member/member.php");
+$Menu['E']['E002'] = array("쪽지관리",_ADMIN_."/_member/member.php");
+$Menu['E002']['11'] = array("쪽지목록",_ADMIN_."/_member/memobox.php");
+
+
+
+
+
+
+
+/*
+$GNB['A'] = "<img src='"._ADMIN_."/images/gnb/gnb0.gif'>";
+$SNB['A'] = "<img src='"._ADMIN_."/images/snb/snb0.gif'>";
+$Menu['A']['A001'] = array("사이트관리",_ADMIN_."/_log/");
+$Menu['A001']['11'] = array("로그분석",_ADMIN_."/_log/");
+$Menu['A001']['12'] = array("일정관리",_ADMIN_."/_schedule/");
+$Menu['A001']['13'] = array("관리자비밀번호변경",_ADMIN_."/_manager/pwdchange.php");
+$Menu['A001']['14'] = array("임시메모",_ADMIN_."/_notes/");
+$Menu['A001']['15'] = array("팝업관리",_ADMIN_."/_popup/popup.php");
+
+
+$GNB['B'] = "<img src='"._ADMIN_."/images/gnb/gnb5.gif'>";
+$SNB['B'] = "<img src='"._ADMIN_."/images/snb/snb5.gif'>";
+$Menu['B']['B001'] = array("게시판관리",_ADMIN_."/board/notice.php");
+$Menu['B001']['11'] = array("공지사항",_ADMIN_."/board/notice.php");
+$Menu['B001']['12'] = array("자주묻는질문",_ADMIN_."/board/faq.php");
+$Menu['B001']['13'] = array("용어사전",_ADMIN_."/board/info.php");
+
+$Menu['B']['B002'] = array("고객센터",_ADMIN_."/board/counsel.php");
+$Menu['B002']['11'] = array("1:1문의",_ADMIN_."/board/counsel.php");
+$Menu['B002']['12'] = array("제휴문의",_ADMIN_."/board/inquiry.php");
+
+$Menu['B']['B003'] = array("이벤트",_ADMIN_."/board/event.php");
+$Menu['B003']['11'] = array("이벤트",_ADMIN_."/board/event.php");
+$Menu['B003']['12'] = array("당첨자발표",_ADMIN_."/board/event_result.php");
+
+$Menu['B']['B004'] = array("커뮤니티",_ADMIN_."/board/board.php");
+$Menu['B004']['11'] = array("자유게시판",_ADMIN_."/board/board.php");
+
+
+$GNB['C'] = "<img src='"._ADMIN_."/images/gnb/gnb6.gif'>";
+$SNB['C'] = "<img src='"._ADMIN_."/images/snb/snb6.gif'>";
+$Menu['C']['C001'] = array("상품/아이템관리",_ADMIN_."/_product/product.php");
+$Menu['C001']['11'] = array("상품/아이템관리",_ADMIN_."/_product/product.php");
+$Menu['C001']['12'] = array("카테고리관리",_ADMIN_."/_product/category.php");
+$Menu['C001']['13'] = array("쿠폰발행/관리",_ADMIN_."/_product/coupon.php");
+
+
+$GNB['D'] = "<img src='"._ADMIN_."/images/gnb/gnb1.gif'>";
+$SNB['D'] = "<img src='"._ADMIN_."/images/snb/snb1.gif'>";
+$Menu['D']['D001'] = array("주문관리",_ADMIN_."/_order/order.php");
+$Menu['D001']['11'] = array("주문관리",_ADMIN_."/_order/order.php");
+$Menu['D001']['12'] = array("아이템사용내역",_ADMIN_."/_order/item.php");
+
+
+$Menu['B']['B001'] = array("매칭관리",_ADMIN_."/match/match.php");
+$Menu['B001']['11'] = array("개인매칭",_ADMIN_."/match/match.php");
+$Menu['B001']['12'] = array("팀매칭",_ADMIN_."/match/matchteam.php");
+$Menu['B001']['13'] = array("공개구애신청",_ADMIN_."/match/wooing.php");
+$Menu['B001']['14'] = array("공개구애관리",_ADMIN_."/match/wooing_item.php");
+$Menu['B001']['14'] = array("카운트",_ADMIN_."/match/count.php");
+
+$Menu['C']['C001'] = array("회원관리",_ADMIN_."/_member/member.php");
+$Menu['C001']['11'] = array("회원관리",_ADMIN_."/_member/member.php");
+$Menu['C001']['12'] = array("탈퇴회원",_ADMIN_."/_member/memberexit.php");
+$Menu['C001']['13'] = array("키워드/사진 업데이트",_ADMIN_."/_member/membersub.php");
+$Menu['C']['C002'] = array("쪽지관리",_ADMIN_."/_member/member.php");
+$Menu['C002']['11'] = array("쪽지목록",_ADMIN_."/_member/memobox.php");
+$Menu['C002']['12'] = array("쪽지발송",_ADMIN_."/_member/memosend_form.php");
+*/
+
+
+
+
+
+/*====================================================================================================
+◈ gnb 메뉴순서
+----------------------------------------------------------------------------------------------------*/
+$GnbSort = array("D","C","E","B","A"); // 배열순서대로
+
+/*====================================================================================================
+◈ 메뉴생성
+----------------------------------------------------------------------------------------------------*/
+$pageCategory = null;
+if(isset($pagecode))	$pageCategory = substr($pagecode,0,1);
+
+
+$top_menu  = $snb_menu = null;
+$snb_menu = ($pageCategory)? "<h2>".$SNB[$pageCategory]."</h2>" : "<h2>".$SNB['0']."</h2>";
+
+if($pageCategory){
+  $depth2 = substr($pagecode,0,4);
+  $depth3 = substr($pagecode,4,2);
+  $snb_menu .= "<ul>";
+  foreach($Menu[$pageCategory] as $MenuKey => $MenuValue){
+    $snb_menu .= "<li class='depth1'><a href='".$MenuValue[1]."'>".$MenuValue[0]."</a></li>";
+    if($Menu[$MenuKey]){
+      foreach($Menu[$MenuKey] as $SubMenuKey => $SubMenuValue){
+        if(($SubMenuKey == $depth3) && ($MenuKey == $depth2)){
+          $pageTitle = $SubMenuValue[0];
+          $snb_class = "depth2_on";
+        }else{
+          $snb_class = "depth2";
+        }
+        $snb_menu .= "<li class='$snb_class'><a href='".$SubMenuValue[1]."'>".$SubMenuValue[0]."</a></li>";
+
+      }
+    }
+  }
+  foreach($GnbSort as $pgkey => $pgvalue){
+    $top_menu .= "<li><a href=\"".$Menu[$pgvalue][$pgvalue.'001']['1']."\">".$GNB[$pgvalue]."</a></li>";
+  }
+  $snb_menu .= "</ul>";
+}else{
+  $snb_menu .= "<ul>";
+  foreach($GnbSort as $pgkey => $pgvalue){
+    foreach($Menu[$pgvalue] as $MenuKey => $MenuValue){
+      $snb_menu .= "<li class='depth1'><a href='".$MenuValue[1]."'>".$MenuValue[0]."</a></li>";
+      if($Menu[$MenuKey]){
+        foreach($Menu[$MenuKey] as $SubMenuKey => $SubMenuValue){
+          $snb_menu .= "<li class='depth2'><a href='".$SubMenuValue[1]."'>".$SubMenuValue[0]."</a></li>";
+        }
+      }
+    }
+    $top_menu .= "<li><a href=\"".$Menu[$pgvalue][$pgvalue.'001']['1']."\">".$GNB[$pgvalue]."</a></li>";
+  }
+  $snb_menu .= "</ul>";
+}
+
+$snb_menu .= "<div class=\"btm\"></div>";
+
+
+$db = new MySQL;
+$site = $db -> SelectOne("Select * from G__Site order by idx desc limit 1 ");
+?>

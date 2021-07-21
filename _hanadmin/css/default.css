@@ -1,0 +1,285 @@
+/*--------------------------------------------------|
+| reset.css 
+| Update : 2012-01-20
+|--------------------------------------------------*/
+@charset "utf-8";
+
+/* Reset */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h3,h4,h5,h6,pre,form,fieldset,input,textarea,p,blockquote,th,td { 
+	margin:0;
+	padding:0;
+}
+table {
+	border-collapse:collapse;
+	border-spacing:0;
+}
+fieldset,img { 
+	border:0;
+}
+address,caption,cite,code,dfn,em,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+/* strong 삭제
+address,caption,cite,code,dfn,em,strong,th,var {
+	font-style:normal;
+	font-weight:normal;
+}
+*/
+ol,ul {
+	list-style:none;
+}
+caption,th {
+	text-align:left;
+}
+h1,h2,h3,h4,h5,h6 {
+	font-size:100%;
+	font-weight:normal;
+}
+q:before,q:after {
+	content:'';
+}
+abbr,acronym { border:0;
+}
+
+/* Classification  (분류) */
+/* clear - left, right, both, none */
+.cl_left { clear:left;}
+.cl_right { clear:left;}
+.cl_both { clear:both;}
+
+/* cursor - url, auto, crosshair, default, pointer, move, e-resize, ne-resize, nw-resize, n-resize, se-resize, s-resize, w-resize, text, wait, help */
+.cur_pointer { cursor:pointer;}
+.cur_cross { cursor:crosshair;}
+.cur_help { cursor:help;}
+.cur_move { cursor:move;}
+
+
+/* display - none, inline, block, list-item, run-in, compact, marker, table, inline-table, table-row-group, table-header-group, table-footer-group, table-row, table-column-group, table-column, table-cell, table-caption */
+.disp_none { display:none;}
+.disp_in { display:inline;}
+.disp_bl { display:block;}
+.disp_inbl { display:inline-block; display: -moz-inline-stack;  /* Firefox 2 */  zoom: 1; /* IE hack to trigger hasLayout*/ *display: inline; /* IE hack to achieve inline-block behavior */}
+
+/* float - left, right */
+.fl_left { float:left;}
+.fl_right { float:right;}
+
+/* Position (위치) */
+/* overflow */
+.over_hidden { overflow:hidden;}
+.over_scroll { overflow:scroll;}
+.over_auto { overflow:auto;}
+
+/* position */
+.vt_top { vertical-align:top;}
+.vt_mid { vertical-align:middle;}
+.vt_bot { vertical-align:bottom;}
+
+/* Padding (안쪽여백) */
+.pd_t_5 { padding-top:5px !important;}
+.pd_t_10 { padding-top:10px !important;}
+.pd_t_15 { padding-top:15px !important;}
+.pd_t_20 { padding-top:20px !important;}
+.pd_t_25 { padding-top:25px !important;}
+.pd_t_30 { padding-top:30px !important;}
+.pd_t_35 { padding-top:35px !important;}
+.pd_t_40 { padding-top:40px !important;}
+.pd_t_45 { padding-top:45px !important;}
+.pd_t_50 { padding-top:50px !important;}
+
+.pd_r_5 { padding-right:5px !important;}
+.pd_r_10 { padding-right:10px !important;}
+.pd_r_15 { padding-right:15px !important;}
+.pd_r_20 { padding-right:20px !important;}
+.pd_r_25 { padding-right:25px !important;}
+.pd_r_30 { padding-right:30px !important;}
+.pd_r_35 { padding-right:35px !important;}
+.pd_r_40 { padding-right:40px !important;}
+.pd_r_45 { padding-right:45px !important;}
+.pd_r_50 { padding-right:50px !important;}
+
+.pd_b_5 { padding-bottom:5px !important;}
+.pd_b_10 { padding-bottom:10px !important;}
+.pd_b_15 { padding-bottom:15px !important;}
+.pd_b_20 { padding-bottom:20px !important;}
+.pd_b_25 { padding-bottom:25px !important;}
+.pd_b_30 { padding-bottom:30px !important;}
+.pd_b_35 { padding-bottom:35px !important;}
+.pd_b_40 { padding-bottom:40px !important;}
+.pd_b_45 { padding-bottom:45px !important;}
+.pd_b_50 { padding-bottom:50px !important;}
+
+.pd_l_5 { padding-left:5px !important;}
+.pd_l_10 { padding-left:10px !important;}
+.pd_l_15 { padding-left:15px !important;}
+.pd_l_20 { padding-left:20px !important;}
+.pd_l_25 { padding-left:25px !important;}
+.pd_l_30 { padding-left:30px !important;}
+.pd_l_35 { padding-left:35px !important;}
+.pd_l_40 { padding-left:40px !important;}
+.pd_l_45 { padding-left:45px !important;}
+.pd_l_50 { padding-left:50px !important;}
+
+
+/* Margin (바깥여백) */
+.mg_t_5 { margin-top:5px !important;}
+.mg_t_10 { margin-top:10px !important;}
+.mg_t_20 { margin-top:20px !important;}
+
+.mg_r_5 { margin-right:5px !important;}
+.mg_r_10 { margin-right:10px !important;}
+.mg_r_20 { margin-right:20px !important;}
+
+.mg_b_5 { margin-bottom:5px !important;}
+.mg_b_10 { margin-bottom:10px !important;}
+.mg_b_20 { margin-bottom:20px !important;}
+.mg_b_40 { margin-bottom:40px !important;}
+
+.mg_l_5 { margin-left:5px !important;}
+.mg_l_10 { margin-left:10px !important;}
+.mg_l_20 { margin-left:20px !important;}
+
+/* Text (문자)*/
+/* text align */
+.txt_left { text-align:left;}
+.txt_center { text-align:center;}
+.txt_right { text-align:right;}
+.txt_just { text-align:justify;}
+
+/* color 네이밍 - http://taehan.pe.kr/DATA/html/webcolor.php */
+.txt_black { color:#000 !important;}
+.txt_gray { color:#555;}
+.txt_hotpink { color:#ee4d74;}
+.txt_blue { color:#4f82d6;}
+.txt_orange {color:#e75c00;}
+.txt_red {color:#f00014;}
+
+/* Font (글꼴)*/
+/* fnot */
+.fs_0 { font-size:0;}
+.fs_11 { font-size:11px;}
+.fs_14 { font-size:14px;}
+
+/* font-weight */
+.fw_bold { font-weight:bold;}
+.fw_normal { font-weight:normal;}
+
+/* backgroung */
+.bg_none {background:none !important;}
+
+/* form */
+input[type=image] {border:none;  }
+
+/* clearfix */
+.clearfix:after {
+content: ".";
+display: block;
+height: 0;
+clear: both;
+visibility: hidden;
+}
+
+.clearfix {display:inline-block; zoom:1;/*for IE 5.5-7*/}
+
+/* Hides from IE-mac \\*/
+* html .clearfix {height: 1%;}
+.clearfix {display: block;}
+/* End hide from IE-mac */
+
+
+/* document common style */
+/* Excel 숫자형태를 텍스트형태로 셀서식을 변환 */
+.TextFormat
+    {padding-top:1px;
+    padding-right:1px;
+    padding-left:1px;
+    mso-ignore:padding;
+    color:windowtext;
+    font-size:11.0pt;
+    font-weight:400;
+    font-style:normal;
+    text-decoration:none;
+    font-family:돋움;
+    mso-generic-font-family:auto;
+    mso-font-charset:129;
+    mso-number-format:"\@";
+    text-align:general;
+    vertical-align:bottom;
+    mso-background-source:auto;
+    mso-pattern:auto;
+    white-space:nowrap;
+}
+
+/* 줄바꿈 */
+.nowrap{
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+}
+
+/* top button */
+#topbtn {cursor:pointer; }
+
+/* Smart Editor Outout  */
+/* 스마트 에디터의 풍부한 표현이 정상적으로 출력되도록 하려면 콘텐츠가 출력되는 곳에 이 클래스를 적용하여야 한다. 
+   예를 들면 게시물 읽기 페이지의 본문이 이에 해당된다. */
+.smartOutput{ clear:both; font-size:12px; line-height:1.6; font-family:Tahoma, Verdana, Arial, Helvetica, Geneva, Sans-serif;  min-height:100px; width:700px; }
+.smartOutput p{ margin-top:7px; margin-bottom:7px;}
+.smartOutput blockquote.q1,
+.smartOutput blockquote.q2,
+.smartOutput blockquote.q3,
+.smartOutput blockquote.q4,
+.smartOutput blockquote.q5,
+.smartOutput blockquote.q6,
+.smartOutput blockquote.q7{ padding:10px; margin-left:15px; margin-right:15px;}
+
+.smartOutput blockquote.q1{ padding:0 10px; border-left:2px solid #ccc;}
+.smartOutput blockquote.q2{ padding:0 10px; background:url(../img/bg_qmark.gif) no-repeat;}
+.smartOutput blockquote.q3{ border:1px solid #d9d9d9;}
+.smartOutput blockquote.q4{ border:1px solid #d9d9d9; background:#fbfbfb;}
+.smartOutput blockquote.q5{ border:2px solid #707070;}
+.smartOutput blockquote.q6{ border:1px dashed #707070;}
+.smartOutput blockquote.q7{ border:1px dashed #707070; background:#fbfbfb;}
+
+.smartOutput sup{ font:10px Tahoma, monospace;}
+.smartOutput sub{ font:10px Tahoma, monospace;}
+.smartOutput table td{ padding:4px;}
+
+
+/* NHN Web Standardization Team (http://html.nhndesign.com/) HHJ 090226 */
+.se2_outputarea ,
+.se2_outputarea th,
+.se2_outputarea td{margin:0;padding:0;color:#666;font-size:12px;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;line-height:1.5;}
+.se2_outputarea p {margin:0;padding:0;}
+.se2_outputarea a:hover{text-decoration:underline;}
+.se2_outputarea a:link{color:#0000ff;}
+.se2_outputarea ul{margin:0 0 0 40px;padding:0;}
+.se2_outputarea ul li {margin:0;list-style-type:disc;padding:0;}
+.se2_outputarea ul ul li {list-style-type:circle;}
+.se2_outputarea ul ul ul li {list-style-type:square;}
+.se2_outputarea img,
+.se2_outputarea fieldset{border:0;}
+
+/* Nboard */
+#n2_nboard .se2_outputarea {color:#666;font-size:12px;font-family:'돋움',Dotum,'굴림',Gulim, AppleGothic,Sans-serif;line-height:1.5;}
+#n2_nboard .se2_outputarea th,
+#n2_nboard .se2_outputarea td{margin:0;padding:0;color:#666;font-size:12px;font-family:'돋움',Dotum,'굴림',Gulim,AppleGothic,Sans-serif;line-height:1.5;}
+#n2_nboard .se2_outputarea p {margin:0;padding:0;}
+#n2_nboard .conts ul li {list-style-type:disc;}
+#n2_nboard .conts ul li li {list-style-type:circle;}
+#n2_nboard .conts ul li li li {list-style-type:square;}
+#n2_nboard .se2_summary_td ul{color:#0482d6}
+
+
+
+
+
+
+
+
+
+
+q:before, q:after { content : ''; }

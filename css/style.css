@@ -1,0 +1,76 @@
+@charset "utf-8";
+img {max-width:100%;}
+*{margin:0;padding: 0;}
+a{text-decoration: none;}
+ul,li{list-style: none;}
+html{background: #f2f7ff;}
+
+
+#main>.inner{float: left;width: 1400px;overflow-x: scroll;margin: 30px;background: white;padding: 20px;border-radius: 10px;position: relative;}
+
+#main .btn{width: 80px;height: 40px;text-align:center;font-size: 16px;font-weight: 600;line-height: 40px;background: #435ebe;color:white;position: absolute;top: 2%;border-radius: 5px;}
+#main .btn.save{right: 230px;}
+#main .btn.revise{right:120px;}
+
+#header{width: 100%;height: 70px;background: #f2f7ff;}
+#header .head{width: 400px;text-align: center;color:#435ebe;line-height: 70px;font-weight: 800;float: left;background: white;}
+#header .nav{float: left;}
+#header .nav h2{color:#435ebe;line-height: 70px;margin-left: 30px;}
+
+#side_nav{width: 400px;background:white;float: left;}
+#side_nav .inner{padding:50px 30px;}
+#side_nav .inner ul{font-size: 18px;color:#435ebe;}
+#side_nav .inner ul a{font-size: 16px;color:#435ebe;}
+#side_nav .inner ul .title{background:#435ebe;color:white;font-weight: 700;}
+#side_nav .inner ul li{padding: 15px 0 15px 20px;border-radius: 5px;}
+#side_nav .inner ul li:hover{background: #435ebe;color:white;}
+#side_nav .inner ul li.active{border:1px solid #435ebe;}
+
+#submit_1 .inner{width: 1200px;overflow-x: scroll;}
+#submit_1 table{border-collapse: collapse;border-spacing: 0;}
+#submit_1 td{border:1px solid #b2b2b2;box-sizing: border-box;border-collapse: collapse;border-spacing: 0;text-align:center;}
+#submit_1 .title{background:#ebf3ff;color:black;}
+
+.__login {border-top:0px solid #325aa4;border-bottom:0px solid #ccc;padding:60px 10px;}
+.__login .inner {max-width:600px;margin:0 auto;}
+.__login .tit {text-align:center;margin-bottom:50px;}
+.__login .tit h3 > * {display:inline-block;vertical-align:middle;}
+.__login .tit h3 span {font-size:50px;font-weight:bold;color:#688dd4;}
+.__login .tit h3 img {margin-right:15px;}
+.__login .tit p {margin-top:35px;font-size:18px;color:#6a757d;line-height:1.7em;}
+.__login .area {max-width:420px;margin:0 auto;position:relative;}
+.__login .area .form {position:relative;padding-right:110px;}
+.__login .area .form button {display:block;position:absolute;right:0;top:0;width:90px;height:100%;background:#5075b4;border:none;color:#fff;font-size:16px;}
+.__login .area .form li {position:relative;}
+.__login .area .form li:before {content:"";font-family:axicon;position:absolute;left:0;bottom:5px;color:#ccc;font-size:24px;width:40px;text-align:center;}
+.__login .area .form .text:before {content:"\f007";}
+.__login .area .form .pass:before {content:"\e6ce";}
+.__login .area .form li ~ li {margin-top:10px;}
+.__login .area .form li input {display:block;width:100%;box-sizing:border-box;border:none;border-bottom:1px solid #ccc;height:40px;text-indent:40px;font-size:16px;}
+.__login .area .form li input::-webkit-input-placeholder {color:#ccc;}
+.__login .area .form li input:-moz-placeholder {color:#ccc;}
+.__login .area .form li input::-moz-placeholder {color:#ccc;}
+.__login .area .form li input:-ms-input-placeholder {color:#ccc;}
+.__login .area .link {margin-top:40px;font-size:0;}
+.__login .area .link li {display:inline-block;position:relative;}
+.__login .area .link li a {display:block;font-size:16px;font-weight:300;color:#333;}
+.__login .area .link li ~ li {padding-left:21px;margin-left:20px;}
+.__login .area .link li ~ li:before {content:"";display:block;position:absolute;left:0;top:50%;margin-top:-7px;height:14px;background:#ddd;width:1px;}
+
+@media all and (max-width:1000px){
+	.__login {padding:20px 10px;}
+	.__login .tit {margin-bottom:20px;} 
+	.__login .tit h3 span {font-size:30px;}
+	.__login .tit h3 img {margin-right:10px;width:40px;}
+	.__login .tit p {margin-top:15px;font-size:13px;line-height:1.5em;}
+	.__login .area .form {padding-right:90px;}
+	.__login .area .form button {width:80px;font-size:14px;}
+	.__login .area .form li:before {bottom:7px;font-size:20px;width:30px;}
+	.__login .area .form li ~ li {margin-top:10px;}
+	.__login .area .form li input {height:35px;text-indent:35px;font-size:14px;}
+	.__login .area .link {margin-top:20px;font-size:0;text-align:center;}
+	.__login .area .link li a {font-size:14px;}
+	.__login .area .link li ~ li {padding-left:16px;margin-left:15px;}
+}
+
+

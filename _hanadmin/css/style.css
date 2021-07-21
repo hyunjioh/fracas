@@ -1,0 +1,720 @@
+@charset "UTF-8"
+/*
+The folks at Yahoo! have also developed their own browser reset styles. As with other reset styles, 
+the Yahoo! Reset CSS eliminates inconsistently applied browser styling for many key (X)HTML elements.
+*/
+* { 
+padding : 0; 
+margin : 0; 
+} 
+table { 
+border-collapse : collapse; 
+border-spacing : 0; 
+} 
+fieldset, img { 
+border : 0; 
+} 
+address, caption, cite, code, dfn, em, strong, th, var { 
+font-weight : normal; 
+font-style : normal; 
+} 
+ol, ul { 
+list-style : none; 
+} 
+caption, th { 
+text-align : left; 
+} 
+h1, h2, h3, h4, h5, h6 { 
+font-weight : normal; 
+font-size : 100%; 
+} 
+q:before, q:after { 
+content : ''; 
+} 
+abbr, acronym { 
+border : 0; 
+} 
+ul, li, ol, dl, dt, dd { 
+list-style : none; 
+} 
+legend { 
+display : none; 
+} 
+hr { 
+display : none; 
+} 
+img, input.type-image { 
+font-size : 0; 
+border : none; 
+} 
+/*
+// Yahoo! Reset CSS
+*/
+/* CSS 속성 선언 순서 
+그 쓰임새가 레이아웃과 관련이 높은 것으로 부터 시작하여 레이아웃과 무관한 것 순으로 아래와 같이 선언 합니다. 
+이 순서는 화면의 렌더링 효율보다는 유지보수의 이점 때문에 제안되었으며 권장하는 수준 입니다. 
+아래 제시된 속성들과 짝을 이루는 관련 속성들은 etc로 분류하여 따로 기술하지 않고 되도록 함께 기술합니다. 
+예를 들면 position 속성과 left, right , top, bottom 속성은 서로 연관된 속성이므로 etc로 분류하지 않고 position 다음에 기술합니다.
+
+display : 표시 
+overflow : 넘침 
+float : 흐름 
+position : 위치 
+z-index : 정렬 
+width & height : 크기 
+margin & padding : 간격 
+border : 보더 
+font : 폰트 
+background : 배경 
+etc : 기타 
+*/
+
+/*
+- 글꼴(그룹)의 이름에 공백이 들어가는 경우에는 인용부호("또는')를 이용합니다.
+예) font-family: "Comic Sans MS", 'Times New Roman';
+
+
+- 지정한 모든 특정 글꼴(그룹)을 사용할 수 없는 경우, 최종적인 선택 범위로 지정해 두는 것이 좋습니다. 인용부호를 사용하지 않아야 합니다.
+serif : 명조계열
+sans-serif : 고딕계열
+cursive : 필기체
+fantasy : 장식체
+monospace : 등폭 글꼴
+
+- 가변폭 글꼴 - 바탕(Batang), 굴림(Gulim), 돋움(Dotum), 궁서(Gungsuh)
+- 고정폭 글꼴 - 바탕체(BatangChe), 굴림체(GulimChe), 돋움(DotumChe), 궁서체(GungsuhChe)
+
+- "맑은 고딕"(Malgun Gothic) - FireFox2.0에서는 영문이름의 맑은 고딕체는 적용이 되지 않습니다
+
+-  가변폭, 고정폭 글꼴의 차이는 자간(글자간의 폭)입니다. 고정폭 글꼴은 알파벳 하나하나에 모두 같은 폭을 사용하는 글골입니다.
+- CSS를 이용해 자간을 설정하려면 가변폭 글꼴을 사용하도록 합니다.
+
+- "맑은 고딕"은 산돌에서 개발한 한글 윈도우 Vista의 기본 글꼴이며, 현재 버전 5.0이 사용되고 있습니다. 오픈타입 폰트이며, ClearType을 지원하기 때문에, 
+현재의 굴림이나 돋움체를 대체하게 될 글꼴입니다. 참고로 영문판 Vista에는 "Segoe UI"글골이 기본글꼴이 됩니다.
+
+- 가변폭 글꼴인 "굴림"을 사용한 경우, 한글은 12px이 일반적인 본문 사이즈와 같습니다.
+그런데, 자간, 줄간, 문자 간격등을 디폴트 상태로 사용한다면, 생각보다는 조금 큼직큼직한 느낌을 주게 됩니다. 
+무엇보다도, "굴림"의 경우 영문/숫자의 경우 조금 크다는 느낌을 받을 수 있습니다. 그래서, Verdana, Tahoma와 같은 고딕 계열의 영문 글꼴을 지정하는 경향이 있습니다.
+
+- IE에서는 영문 글꼴로 지정된 한글이 11px의 크기가 정상적으로 보이지 않습니다.
+알파벳과 숫자는 11px로 보여주고, 한글의 경우 12px로 표현하고 있습니다. 
+일종의 CSS IE Hack이라 생각됩니다만,  영문 고딕 글꼴에 11px크기를 사용하는 곳이 많습니다. 
+다만, Firefox와 같은 웹브라우저는 11px를 정확히 표현하고 있기 때문에, 한글이 작게 보이게 됩니다.
+
+-영문 글꼴로 설정된 한글의 경우, IE7의 프린터 출력에도 문제가 있습니다. 
+11px의 한글이 13px의 한글과 같은 크기로 출력됩니다. 프린터에 따라 다른지는 알 수 없습니다만, 
+같은 환경에서 Firefox가 정상적으로 출력하는 것에 비하면, 문제가 있다고 보여집니다.
+
+-참고사이트
+http://blog.rss.naver.com/einmong.xml
+*/
+/*-------------------------------------------------------------------------------------------------
+	default
+-------------------------------------------------------------------------------------------------*/
+body {font-size:12px; line-height:1.6; font-family:Dotum, AppleGothic, Sans-serif; }
+
+
+.pointer {cursor:pointer}
+.center {text-align:center}
+.left {text-align:left}
+.right {text-align:right}
+.png24 {tmp:expression(setPng24(this));}
+.clear {clear:both}
+
+.nowraptd{
+	border:1px solid red;
+	word-wrap: break-word; /* Internet Explorer 5.5+ */
+	white-space: pre-wrap; /* css-3 */
+	white-space: -moz-pre-wrap; /* Mozilla, since 1999 */
+	white-space: -pre-wrap; /* Opera 4-6 */
+	white-space: -o-pre-wrap; /* Opera 7 */
+}
+
+/*-------------------------------------------------------------------------------------------------
+	Login
+-------------------------------------------------------------------------------------------------*/
+
+div#pop-contnet {
+	padding:100px 0 25px;
+}
+div.bluebox {
+	margin:0 0 10px 0;
+	background:url('../images/admin_login/bg_bluebox_top360.gif') no-repeat left top;
+	overflow:hidden;
+	zoom:1;
+}
+div.bluebox-btm {
+	background:url('../images/admin_login/bg_bluebox_btm360.gif') no-repeat left bottom;
+}
+
+
+div.login-form{
+	overflow:hidden;
+	padding:18px 0 14px 34px;
+	zoom:1;
+}
+div.login-form dl {
+	overflow:hidden;
+	float:left;
+	width:220px;
+	padding:9px 0 0;
+	margin:0;
+	zoom:1;
+}
+div.login-form dl dt {
+	clear:both;
+	float:left;
+	width:49px;
+	padding:6px 0 0;
+	margin:0;
+	background:none;
+}
+div.login-form dl dd {
+	float:left;
+	height:28px;
+	margin:0;
+	padding:0;
+}
+div.login-form dl dd input {
+	width:157px;
+}
+div.login-form div.btn {
+	margin:0;
+}
+
+div.member-login {
+  padding:30px 0;
+	width:380px;
+	min-height:177px;
+	_height:177px;
+	margin:13px auto 0;
+}
+
+div.member-login p.stxt {
+	margin:0 0 9px;
+	font-size:11px;
+}
+
+div.member-login p.txt-find {
+	margin:13px 0 0 12px;
+}
+div.member-login p.txt-find img {
+	vertical-align:middle;
+}
+div.member-login p.txt-find a {
+	margin:0 0 0 8px;
+}
+
+
+
+
+/*-------------------------------------------------------------------------------------------------
+	Smart Editor Outout
+-------------------------------------------------------------------------------------------------*/
+/* 스마트 에디터의 풍부한 표현이 정상적으로 출력되도록 하려면 콘텐츠가 출력되는 곳에 이 클래스를 적용하여야 한다. 예를 들면 게시물 읽기 페이지의 본문이 이에 해당된다. */
+.smartOutput{ font-size:12px; line-height:1.6; font-family:Dotum, AppleGothic, Sans-serif;} 
+
+.smartOutput p{ margin-top:7px; margin-bottom:7px;}
+
+.smartOutput blockquote.q1,
+.smartOutput blockquote.q2,
+.smartOutput blockquote.q3,
+.smartOutput blockquote.q4,
+.smartOutput blockquote.q5,
+.smartOutput blockquote.q6,
+.smartOutput blockquote.q7{ padding:10px; margin-left:15px; margin-right:15px;}
+
+.smartOutput blockquote.q1{ padding:0 10px; border-left:2px solid #ccc;}
+.smartOutput blockquote.q2{ padding:0 10px; background:url(../img/bg_qmark.gif) no-repeat;}
+.smartOutput blockquote.q3{ border:1px solid #d9d9d9;}
+.smartOutput blockquote.q4{ border:1px solid #d9d9d9; background:#fbfbfb;}
+.smartOutput blockquote.q5{ border:2px solid #707070;}
+.smartOutput blockquote.q6{ border:1px dashed #707070;}
+.smartOutput blockquote.q7{ border:1px dashed #707070; background:#fbfbfb;}
+
+.smartOutput sup{ font:10px Tahoma, monospace;}
+.smartOutput sub{ font:10px Tahoma, monospace;}
+.smartOutput table td{ padding:4px;}
+
+
+/*-------------------------------------------------------------------------------------------------
+	Excel 숫자형태를 텍스트형태로 셀서식을 변환
+-------------------------------------------------------------------------------------------------*/
+.TextFormat{
+	padding-top:1px;
+    padding-right:1px;
+    padding-left:1px;
+    mso-ignore:padding;
+    color:windowtext;
+    font-size:11.0pt;
+    font-weight:400;
+    font-style:normal;
+    text-decoration:none;
+    font-family:돋움;
+    mso-generic-font-family:auto;
+    mso-font-charset:129;
+    mso-number-format:"\@";
+    text-align:general;
+    vertical-align:bottom;
+    mso-background-source:auto;
+    mso-pattern:auto;
+    white-space:nowrap;
+}
+
+/*-------------------------------------------------------------------------------------------------
+	Form 요소
+-------------------------------------------------------------------------------------------------*/
+input.input-blur {
+	height: 14px;
+	padding: 4px 3px 0 3px;
+	border:solid 1px #dddcdc;
+	color:#333;
+	font-size: 12px;
+	vertical-align: middle;
+}
+input.input-focus {
+	height: 14px;
+	padding: 4px 3px 0 3px;
+	background: #e4f6fb;
+	border:solid 1px #93cfe6;
+	color:#333;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+input[type=file] {
+	height: 20px;
+	padding: 4px 3px 0 3px;
+	margin:2px 0;
+	border:solid 1px #dddcdc;
+	background-color:#ffffff;
+	color:#333;
+	font-size: 12px;
+	vertical-align: middle;
+}
+
+/*
+input[type=checkbox] {
+	padding: 0;
+	margin:2px 0;
+	border:none;
+	background-color:#ffffff;
+	color:#333;
+	vertical-align: middle;
+}
+*/
+input[type=image] {
+	vertical-align: middle;
+}
+
+img{	vertical-align: middle;}
+
+/*-------------------------------------------------------------------------------------------------
+	Administrator
+-------------------------------------------------------------------------------------------------*/
+*, html, body {padding:0; margin:0;}
+
+#wrapper {width: 99.9%; margin: 0 auto; height:100%;}
+#container {position:relative}
+#header {
+	height:45px;
+	background: #000 url(../images/background.jpg) repeat-y scroll left top;
+}
+/* Create a Shadow Overlay */ 
+#header div{
+	background: transparent url(../images/overlay.png) no-repeat scroll right bottom;
+}
+
+#overlay {
+	height:50px;
+	position:absolute;
+	top:0;
+	left;0;
+  background:url(../images/overlay.png);
+}
+#copyright {
+	bottom:50px;
+	width:100%;
+	clear:both;
+	height:50px;
+}
+
+#left-menu{
+	position:relative;
+	height:100%;
+	min-height:100%;
+	bottom:0;
+	margin-right:2px;
+	padding:10px 0;
+	_padding:10px 0;
+	width:200px;
+	float:left;
+
+}
+#left-menu-wide{
+	height:100%;
+	min-height:100%;
+	bottom:0;
+	margin-right:2px;
+	padding:10px 0;
+	_padding:10px 0;
+	background: #20282D; /* old browsers */
+	background: -moz-linear-gradient(top, #20282D 3%, #252E34 51%, #222A30 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#20282D), color-stop(51%,#252E34), color-stop(100%,#222A30)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20282D', endColorstr='#222A30',GradientType=0 ); /* ie */
+	-moz-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Firefox */
+	-webkit-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Safari, Chrome */
+	box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* CSS3 */
+	float:left;
+
+}
+#body-content{ 
+	background-color:#ffffff;
+	float:left; 
+	width:800px;
+	margin-top: 20px;
+	margin-left:30px;
+}
+
+#body-content-ext{ 
+	clear:both;
+	background-color:#ffffff;
+	width:98%;
+	margin:0 auto;
+	margin-top: 20px;
+}
+
+#body-content-main{ 
+	float:left; 
+	width:800px;
+	background-color:#ffffff;
+	margin:0 auto;
+	margin-top: 10px;
+	margin-left:30px;
+}
+
+#body-popup{ 
+
+}
+
+.page-title , .sub-page-title{
+	margin:0 auto;
+	font-family: "맑은고딕", 'Malgun gothic', "돋움", Dotum, "굴림", Gulim, Arial, Helvetica, sans-serif, "Courier New", Courier, monospace ;
+	outline: 0;
+	padding: 5px 12px;
+	_padding:5px 12px;
+	display: block;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 1px 1px #1f272b;
+	border: 1px solid #1c252b;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #232B30; /* old browsers */
+	background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#3D4850), color-stop(4%,#313d45), color-stop(100%,#232B30)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D4850', endColorstr='#232B30',GradientType=0 ); /* ie */
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* CSS3 */
+	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Firefox */
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Safari, Chrome */
+}
+
+.page-title span {background:url(/_hanadmin/images/arrow.png)  no-repeat; padding:0 0 1px 25px;}
+.sub-page-title span {background:url(/_hanadmin/images/hand-point.png)  no-repeat; padding:0 0 1px 25px;}
+
+.main-layer{
+	position:relative;
+	float:left;
+	width:33%;
+	margin:5px 1px;
+}
+
+.copyright{ 
+	position:relative;
+	bottom:10;
+	background:url('../images/menu_bg.gif');font-size:9pt; font-family:"굴림", gulim;
+}
+
+
+
+
+
+
+
+h1 {
+	width:280px;
+	padding-left:20px;
+	font: 2.5em bold Arial, "MS Trebuchet", sans-serif, Georgia, 'Times New Roman', Times, serif;
+	color: #ffffff;
+	padding: 5px 10px;
+
+}
+
+a:link		{color: #505050; text-decoration: none; }
+a:visited	{color: #505050; text-decoration: none;}
+a:active	{color: #505050; text-decoration: none;}
+a:hover		{color: #549c00; text-decoration: none;}
+
+a.site-title:link		{color: #fff; text-decoration: none; }
+a.site-title:visited	{color: #fff; text-decoration: none;}
+a.site-title:active	    {color: #fff; text-decoration: none;}
+a.site-title:hover		{color: #549c00; text-decoration: none;}
+
+.search{
+	width:100%;
+	border-collapse: collapse; 
+	border:1px dotted #cccccc;
+}
+
+.listtable, .viewtable, .formtable{
+	border-top:1px solid #dddddd;
+}
+
+.listtable .tableth{
+	height:30px;
+	font-weight:bold;
+	text-align:center;
+	padding:2px 3px;
+	background-color:#efefef;
+}
+
+.listtable .tabletd{
+	height:30px;
+	padding:2px 3px;
+	background-color:#ffffff;
+	border-bottom:1px solid #dddddd;
+}
+
+
+.tfoottd_L {
+	height:30px;
+	padding-left:5px;
+	text-align:left;
+	vertical-align:bottom;
+}
+
+.tfoottd_R {
+	height:30px;
+	padding-right:5px;
+	text-align:right;
+	vertical-align:bottom;
+}
+
+.tfoottd_C {
+	height:30px;
+	text-align:center;
+	vertical-align:bottom;
+}
+
+
+
+.viewtable .tableth{
+	height:30px;
+	font-weight:14px;
+	font-weight:bold;
+	text-align:center;
+	padding:2px 3px;
+	background-color:#efefef;
+	border-bottom:1px solid #dddddd;
+	border-right:1px solid #dddddd;
+}
+
+.viewtable .tabletd{
+	padding:10px;
+	background-color:#ffffff;
+	border-bottom:1px solid #dddddd;
+}
+
+.viewtable .tabletdcontent{
+	padding:5px;
+	background-color:#ffffff;
+	border-bottom:1px solid #dddddd;
+	vertical-align:top;
+}
+
+.formtable .tableth{
+	height:30px;
+	font-weight:14px;
+	font-weight:bold;
+	text-align:center;
+	padding:2px 3px;
+	background-color:#efefef;
+	border-bottom:1px solid #dddddd;
+	border-right:1px solid #dddddd;
+}
+
+.formtable .tabletd{
+	padding:5px;
+	background-color:#ffffff;
+	border-bottom:1px solid #dddddd;
+}
+
+
+
+.number {
+	font-family:tahoma;
+	font-size:11px;
+}
+
+
+
+.page {width:100%; margin:0 auto;  text-align:center}
+.page table{margin:0 auto; }
+.page span {background-color:#606060; color:white; border:1px solid #000; padding:2px 5px}
+.page a.pagenum			{ border:1px solid #ddd; padding:2px 5px}
+.page a.pagenum:hover    {background-color:#efefef; border:1px solid #ddd; padding:2px 5px}
+
+.page img    { vertical-align:middle}
+
+/*-------------------------------------------------------------------------------------------------
+	Left menu
+-------------------------------------------------------------------------------------------------*/
+/* Dark Button CSS */
+.button {
+	margin:0 auto;
+	font-family: "맑은고딕", 'Malgun gothic', "돋움", Dotum, "굴림", Gulim, Arial, Helvetica, sans-serif, "Courier New", Courier, monospace ;
+	outline: 0;
+	padding: 5px 12px;
+	_padding:5px 12px;
+	display: block;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 1px 1px #1f272b;
+	border: 1px solid #1c252b;
+	border-radius: 3px;
+	-moz-border-radius: 3px;
+	-webkit-border-radius: 3px;
+	background: #232B30; /* old browsers */
+	background: -moz-linear-gradient(top, #3D4850 3%, #313d45 4%, #232B30 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#3D4850), color-stop(4%,#313d45), color-stop(100%,#232B30)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3D4850', endColorstr='#232B30',GradientType=0 ); /* ie */
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* CSS3 */
+	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Firefox */
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Safari, Chrome */
+}
+.button:hover {
+	color: #fff;
+	background: #4C5A64; /* old browsers */
+	background: -moz-linear-gradient(top, #4C5A64 3%, #404F5A 4%, #2E3940 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#4C5A64), color-stop(4%,#404F5A), color-stop(100%,#2E3940)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#4C5A64', endColorstr='#2E3940',GradientType=0 ); /* ie */
+}
+.button:active {
+	background-position: 0 top;
+	position: relative;
+	top: 1px;
+	color: #fff;
+	padding: 6px 12px 4px;
+	_padding: 6px 12px 4px;
+	background: #20282D; /* old browsers */
+	background: -moz-linear-gradient(top, #20282D 3%, #252E34 51%, #222A30 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#20282D), color-stop(51%,#252E34), color-stop(100%,#222A30)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20282D', endColorstr='#222A30',GradientType=0 ); /* ie */
+	-moz-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Firefox */
+	-webkit-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Safari, Chrome */
+	box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* CSS3 */
+}
+
+/* Vertical List: */
+.vertical-list {
+	float:left;
+	list-style: none;
+	padding: 10px;
+	_padding:10px;
+	width: 180px;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #20282D; /* old browsers */
+	background: -moz-linear-gradient(top, #20282D 3%, #252E34 51%, #222A30 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#20282D), color-stop(51%,#252E34), color-stop(100%,#222A30)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#20282D', endColorstr='#222A30',GradientType=0 ); /* ie */
+	-moz-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Firefox */
+	-webkit-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Safari, Chrome */
+	box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* CSS3 */
+}
+.vertical-list .button {
+	font-family: "맑은고딕", 'Malgun gothic', "돋움", Dotum, "굴림", Gulim, Arial, Helvetica, sans-serif, "Courier New", Courier, monospace ;
+	width:152px;
+	outline: 0;
+	padding: 5px 12px;
+	_padding:5px 12px;
+	display: block;
+	color: #fff;
+	font-weight: bold;
+	text-shadow: 1px 1px #1f272b;
+	border: 1px solid #1c252b;
+	border-radius: 5px;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	background: #515B62; /* old browsers */
+	background: -moz-linear-gradient(top, #515B62 3%, #444E55 5%, #394147 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#515B62), color-stop(5%,#444E55), color-stop(100%,#394147)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#515B62', endColorstr='#394147',GradientType=0 ); /* ie */
+}
+.vertical-list .button:hover, .vertical-list .over {
+	color:#fff;
+	background: #5F6B72; /* old browsers */
+	background: -moz-linear-gradient(top, #5F6B72 3%, #56646C 4%, #4D5A62 50%, #434D54 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#5F6B72), color-stop(4%,#56646C), color-stop(50%,#4D5A62), color-stop(100%,#434D54)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5F6B72', endColorstr='#434D54',GradientType=0 ); /* ie */
+}
+.vertical-list .button:active {
+	padding: 5px 12px;
+	_padding: 5px 12px;
+	top: 0;
+	background: #515B62; /* old browsers */
+	background: -moz-linear-gradient(top, #515B62 3%, #444E55 5%, #394147 100%); /* firefox */
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(3%,#515B62), color-stop(5%,#444E55), color-stop(100%,#394147)); /* webkit */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#515B62', endColorstr='#394147',GradientType=0 ); /* ie */		-moz-box-shadow: 1px 1px 1px rgba(255,255,255,0.1); /* Firefox */
+	-moz-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Firefox */
+	-webkit-box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* Safari, Chrome */
+	box-shadow: 1px 1px 1px rgba(0,0,0,0.2); /* CSS3 */
+
+}
+.vertical-list li { margin: 0 0 5px; }
+.vertical-list li:last-child { margin: 0; }
+
+a.button:link		{color: #9fa8b0; text-decoration: none; }
+a.button:visited	{color: #9fa8b0; text-decoration: none;}
+a.button:active	{color: #9fa8b0; text-decoration: none;}
+a.button:hover		{color: #ffffff; text-decoration: none;}
+
+a.over:link		{color: #ffffff; text-decoration: none; }
+a.over:visited	{color: #ffffff; text-decoration: none;}
+a.over:active	{color: #ffffff; text-decoration: none;}
+a.over:hover		{color: #ffffff; text-decoration: none;}
+
+
+/*-------------------------------------------------------------------------------------------------
+	Log 분석
+-------------------------------------------------------------------------------------------------*/
+#LOG {
+	width:700px;
+	font-family:"굴림", gulim, Arial;
+}
+#LOG .eng { font-size:12px; }
+
+
+#LOG .Info{
+	width:100%;
+	border:1px solid #CCCCCC;
+	padding:10px;
+}
+
+.table-title  {  padding-left:15px; text-align:left; color:#505050; font-size:9pt; font-family:"굴림", gulim; font-weight:bold; background: #cccccc url(../images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x; color: #222222;}
+.subbody-title  {background: #cccccc url(../images/ui-bg_highlight-soft_75_cccccc_1x100.png) 50% 50% repeat-x; color: #222222;}
+.subbody-title-lightness  {background: #cccccc url(../images/ui-bg_glass_75_e6e6e6_1x400.png) 50% 50% repeat-x; color: #222222;}
+
+
+
+
+#LOG .number {font-family:verdana}
+#LOG .number-big {font-family:verdana; font-size:20px; font-weight:bold}
+#LOG .number-middle {font-family:verdana; font-size:14px; font-weight:bold}
+#LOG .number-normal {font-family:verdana; font-size:11px; font-weight:bold}
+#LOG .number-small {font-family:verdana; font-size:10px; }
+#LOG td, div {vertical-align:middle}
+#LOG div {height:100%; margin:0 auto}
+
